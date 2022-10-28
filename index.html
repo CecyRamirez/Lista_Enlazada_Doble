@@ -25,7 +25,7 @@
         const inventario = new Inventario();
 
         document.getElementById("btnAgregar").addEventListener("click",()=>{
-            let codigo= document.getElementById("codigo").value;
+            let codigo= parseInt(document.getElementById("codigo").value);
             let nombre= document.getElementById("nombre").value;
             let cantidad= document.getElementById("cantidad").value;
             let costo= document.getElementById("costo").value;
@@ -35,7 +35,7 @@
             document.getElementById("detalles").innerHTML += ("se agregó un nuevo registro<br>")
         })
         document.getElementById("btnEliminar").addEventListener("click", ()=>{
-            let codigo= document.getElementById("codigo").value;
+            let codigo= parseInt(document.getElementById("codigo").value);
             inventario.eliminar(codigo);
             document.getElementById("detalles").innerHTML += ("se eliminó el registro con codigo: " + codigo + "<br>")
         })
@@ -50,7 +50,7 @@
         })
 
         document.getElementById("btnBuscar").addEventListener("click", ()=>{
-            let codigo= document.getElementById("codigo").value;
+            let codigo= parseInt(document.getElementById("codigo").value);
             let res=inventario.buscar(codigo);
             if (res==null)
             document.getElementById("detalles").innerHTML +="no existe<br>";
